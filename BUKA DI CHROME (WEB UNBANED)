@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNBANED WHATSAPP - Tema Seram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 100, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 150, 0.1) 0%, transparent 20%);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Gambar iblis di atas */
+        .devil-image {
+            width: 200px;
+            height: 200px;
+            margin: 10px 0 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.7);
+            animation: devilGlow 3s infinite alternate;
+        }
+        
+        .devil-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(50%) hue-rotate(-30deg) contrast(120%);
+        }
+        
+        @keyframes devilGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(255, 0, 150, 0.9);
+            }
+        }
+        
+        /* Judul utama */
+        .title {
+            color: #ff0033;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 0, 51, 0.7);
+            letter-spacing: 1px;
+            animation: titleGlow 2s infinite alternate;
+            padding: 0 10px;
+        }
+        
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 0, 51, 0.7);
+            }
+            100% {
+                text-shadow: 0 0 15px rgba(255, 0, 51, 1), 0 0 25px rgba(255, 0, 51, 0.8);
+            }
+        }
+        
+        /* Container untuk form */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Input nomor */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .input-label {
+            color: #ff3366;
+            font-size: 14px;
+            text-shadow: 0 0 5px rgba(255, 51, 102, 0.5);
+        }
+        
+        .number-input {
+            background: transparent;
+            border: 2px solid #ff0033;
+            border-radius: 5px;
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+            width: 100%;
+            height: 50px;
+        }
+        
+        .number-input:focus {
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
+        }
+        
+        /* Select menu */
+        .select-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .method-select {
+            background: transparent;
+            border: 2px solid #ff0033;
+            border-radius: 5px;
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+        }
+        
+        .method-select option {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .method-select:focus {
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
+        }
+        
+        /* Tombol UNBAN */
+        .unban-button {
+            background: transparent;
+            border: 2px solid #ff0033;
+            border-radius: 5px;
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+        }
+        
+        .unban-button:hover {
+            background-color: rgba(255, 0, 51, 0.2);
+            box-shadow: 0 0 20px rgba(255, 0, 51, 0.7);
+        }
+        
+        /* Link telegram */
+        .telegram-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .telegram-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #ff3366;
+            transition: all 0.3s;
+        }
+        
+        .telegram-link:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.7);
+        }
+        
+        .telegram-icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .telegram-text {
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        /* Efek tambahan untuk tema seram */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            color: rgba(255, 51, 102, 0.3);
+            font-size: 24px;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        /* Modal untuk detail metode */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: #111;
+            border: 2px solid #ff0033;
+            border-radius: 10px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ff0033;
+            padding-bottom: 10px;
+        }
+        
+        .modal-title {
+            color: #ff3366;
+            font-size: 18px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: #ff3366;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            color: #fff;
+            line-height: 1.5;
+        }
+        
+        .email-details {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(255, 0, 51, 0.1);
+            border-radius: 5px;
+        }
+        
+        .email-field {
+            margin-bottom: 10px;
+        }
+        
+        .email-field strong {
+            color: #ff3366;
+        }
+    </style>
+</head>
+<body>
+    <!-- Gambar iblis di atas -->
+    <div class="devil-image">
+        <img src="https://files.catbox.moe/waet06.jpeg" alt="Devil Image">
+    </div>
+    
+    <!-- Judul utama -->
+    <h1 class="title">☠︎⚡❄️𝐑𝐀𝐌𝐃𝐇𝐀𝐍 𝐎𝐅𝐅𝚰𝐂𝚰𝐀𝐋 👑❄️⚡☠︎</h1>
+    
+    <!-- Container untuk form -->
+    <div class="container">
+        <!-- Input nomor -->
+        <div class="input-group">
+            <label class="input-label">Nomor WhatsApp</label>
+            <input type="text" class="number-input" placeholder="+628123456789" id="whatsappNumber">
+        </div>
+        
+        <!-- Select menu -->
+        <div class="select-group">
+            <label class="input-label">Pilih Metode Unban</label>
+            <select class="method-select" id="methodSelect">
+                <option value="met1">[MET 1 UNBAN FRESH]</option>
+                <option value="met2">[MET 2 PERMA×LUMUT]</option>
+            </select>
+        </div>
+        
+        <!-- Tombol UNBAN -->
+        <button class="unban-button" id="unbanBtn">❄️★彡𝐔𝐍𝐁𝐀𝐍 𝐍𝐔𝐌𝐁𝐄𝐑彡★❄️</button>
+    </div>
+    
+    <!-- Link telegram -->
+    <div class="telegram-links">
+        <a href="https://t.me/GarielGeri" class="telegram-link" target="_blank">
+            <i class="fab fa-telegram telegram-icon"></i>
+            <span class="telegram-text">Telegram Saya</span>
+        </a>
+        <a href="https://t.me/+AgMWnJ5g-pI4Yjk1" class="telegram-link" target="_blank">
+            <i class="fab fa-telegram telegram-icon"></i>
+            <span class="telegram-text">Channel Telegram</span>
+        </a>
+    </div>
+    
+    <!-- Modal untuk detail metode -->
+    <div class="modal" id="methodModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Detail Metode</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Konten modal akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Efek tambahan untuk tema seram -->
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <script>
+        // Tambahkan elemen floating untuk efek seram
+        const floatingElements = document.getElementById('floatingElements');
+        const symbols = ['👹', '💀', '🩸', '🔥', '☠️', '📱', '🔪', '⚰️', '👻', '💣'];
+        
+        for (let i = 0; i < 20; i++) {
+            const element = document.createElement('div');
+            element.className = 'floating-element';
+            element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = (Math.random() * 20 + 10) + 's';
+            element.style.animationDelay = Math.random() * 5 + 's';
+            floatingElements.appendChild(element);
+        }
+        
+        // Data untuk metode unban
+        const methods = {
+            met1: {
+                title: "[MET 1 UNBAN FRESH]",
+                emailTo: "support@support.whatsapp.com",
+                subject: "新的 WhatsApp 用戶帳號申訴提交",
+                message: `مرحبا فريق دعم واتساب
+انا رجل ابلغ من العمر ٦٠ سنه وكنت استخدم واتساب منذ عام 2009 واعرف طريقة الاستخدام والشروط الازمه لواتساب جيدا كنت استعمل واتساب طول حياتي في العمل والتواصل مع عملائي ولكن منذ ايام لاحظت أنه تم حظر حسابي بشكل غير مفهوم وغير اائق بالنسبه لشخص يستخدم واتساب بشكل طبيعي ودون اي انتهاك لذلك اطالب وارفع قضيه عليكم لرفع الحظر عن حسابي ورقم حسابي هو +20 عليكم مساعدتي بشكل سريع`
+            },
+            met2: {
+                title: "[MET 2 PERMA×LUMUT]",
+                emailTo: "help_new@support.whatsapp.com, faq_sp@support.whatsapp.com, support@support.whatsapp.com",
+                subject: "Bonjour WhatsApp, nous souhaitons restaurer WhatsApp qui a été bloqué sans raison",
+                message: `Bonjour support WhatsApp, nous 
+utilisons l'application WhatsApp que nous aimons, ici nous voulons demander la récupération du compte WhatsApp qui a été bloqué par des personnes qui ne connaissent aucune honte, ce qui m'empêche d'utiliser mon compte WhatsApp car il a été bloqué, à cause de cela mes activités sur WhatsApp ont été arrêtées en raison du blocage. Veuillez aider à récupérer le numéro de compte WhatsApp : +62xxx, j'espère que WhatsApp pourra bien répondre à ce que je vous ai dit, merci pour votre service WhatsApp`
+            }
+        };
+        
+        // Elemen DOM
+        const methodSelect = document.getElementById('methodSelect');
+        const unbanBtn = document.getElementById('unbanBtn');
+        const methodModal = document.getElementById('methodModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.getElementById('closeModal');
+        const whatsappNumber = document.getElementById('whatsappNumber');
+        
+        // Fungsi untuk membuka modal dengan detail metode
+        function openMethodModal(methodKey) {
+            const method = methods[methodKey];
+            modalTitle.textContent = method.title;
+            
+            // Ganti placeholder dengan nomor WhatsApp yang dimasukkan
+            let message = method.message;
+            if (whatsappNumber.value.trim()) {
+                message = message.replace(/\+20|\+62xxx/g, whatsappNumber.value.trim());
+            }
+            
+            modalBody.innerHTML = `
+                <p>Metode ini akan membuka aplikasi email dengan detail berikut:</p>
+                <div class="email-details">
+                    <div class="email-field">
+                        <strong>Kepada:</strong> ${method.emailTo}
+                    </div>
+                    <div class="email-field">
+                        <strong>Subjek:</strong> ${method.subject}
+                    </div>
+                    <div class="email-field">
+                        <strong>Pesan:</strong><br>
+                        <pre style="white-space: pre-wrap; margin-top: 5px;">${message}</pre>
+                    </div>
+                </div>
+                <p style="margin-top: 15px;">Klik tombol di bawah untuk membuka aplikasi email dengan detail ini.</p>
+                <button class="unban-button" style="margin-top: 15px;" id="sendEmailBtn">Buka Aplikasi Email</button>
+            `;
+            
+            // Tambahkan event listener untuk tombol email
+            document.getElementById('sendEmailBtn').addEventListener('click', function() {
+                const emailBody = encodeURIComponent(message);
+                const emailSubject = encodeURIComponent(method.subject);
+                window.location.href = `mailto:${method.emailTo}?subject=${emailSubject}&body=${emailBody}`;
+            });
+            
+            methodModal.style.display = 'flex';
+        }
+        
+        // Event listener untuk tombol UNBAN
+        unbanBtn.addEventListener('click', function() {
+            const selectedMethod = methodSelect.value;
+            
+            // Validasi nomor WhatsApp
+            if (!whatsappNumber.value.trim()) {
+                alert('Masukkan nomor WhatsApp terlebih dahulu!');
+                return;
+            }
+            
+            // Buka modal dengan detail metode
+            openMethodModal(selectedMethod);
+        });
+        
+        // Event listener untuk menutup modal
+        closeModal.addEventListener('click', function() {
+            methodModal.style.display = 'none';
+        });
+        
+        // Tutup modal jika klik di luar konten modal
+        window.addEventListener('click', function(event) {
+            if (event.target === methodModal) {
+                methodModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
